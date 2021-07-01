@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import curso.dio.spring.gerenciamentodepessoas.dto.request.PessoaDTO;
 import curso.dio.spring.gerenciamentodepessoas.dto.response.MessageResponseDTO;
 import curso.dio.spring.gerenciamentodepessoas.entity.Pessoa;
+import curso.dio.spring.gerenciamentodepessoas.exceptions.PessoaNotFoundException;
 import curso.dio.spring.gerenciamentodepessoas.mapper.PessoaMapper;
 import curso.dio.spring.gerenciamentodepessoas.repository.PessoaRepository;
 
@@ -35,6 +36,12 @@ public class PessoaService {
 				.stream()
 				.map(pessoaMapper::toDTO)
 				.collect(Collectors.toList());
+	}
+
+	public PessoaDTO findById(Long id) throws PessoaNotFoundException {
+		return pessoaRepository.findById(id)
+				.map(pessoaMapper::toDTO)
+				.orElseThrow(() -> new PessoaNotFoundException("Pessoa " + id + " não encontrada!"));
 	}
 	
 }
