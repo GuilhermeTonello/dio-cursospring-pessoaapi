@@ -12,14 +12,13 @@ import curso.dio.spring.gerenciamentodepessoas.entity.Pessoa;
 import curso.dio.spring.gerenciamentodepessoas.exceptions.PessoaNotFoundException;
 import curso.dio.spring.gerenciamentodepessoas.mapper.PessoaMapper;
 import curso.dio.spring.gerenciamentodepessoas.repository.PessoaRepository;
+import lombok.AllArgsConstructor;
 
 @Service
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PessoaService {
 	
-	@Autowired
 	private PessoaRepository pessoaRepository;
-	
-	@Autowired
 	private PessoaMapper pessoaMapper;
 	
 	public MessageResponseDTO save(PessoaDTO pessoaDTO) {

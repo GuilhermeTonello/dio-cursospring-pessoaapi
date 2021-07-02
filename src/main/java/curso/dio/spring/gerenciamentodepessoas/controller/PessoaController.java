@@ -20,12 +20,13 @@ import curso.dio.spring.gerenciamentodepessoas.dto.request.PessoaDTO;
 import curso.dio.spring.gerenciamentodepessoas.dto.response.MessageResponseDTO;
 import curso.dio.spring.gerenciamentodepessoas.exceptions.PessoaNotFoundException;
 import curso.dio.spring.gerenciamentodepessoas.service.PessoaService;
+import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("api/v1/pessoa")
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PessoaController {
 	
-	@Autowired
 	private PessoaService pessoaService;
 	
 	@PostMapping
