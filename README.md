@@ -1,6 +1,6 @@
 # Digital Innovation One: Desenvolvendo um sistema de gerenciamento de pessoas em API REST com Spring Boot
 
-Curso realizado a partir do Bootcamp [nome-aqui] da Digital Innovation One (DIO).
+Curso realizado a partir do Bootcamp GFT START #2 Java da Digital Innovation One (DIO).
 
 ## Tópicos abordados no curso:
 - Setup do projeto feito com o Spring Initializr ([https://start.spring.io/](https://start.spring.io/))
