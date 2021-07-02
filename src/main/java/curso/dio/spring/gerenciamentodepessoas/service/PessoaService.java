@@ -43,5 +43,10 @@ public class PessoaService {
 				.map(pessoaMapper::toDTO)
 				.orElseThrow(() -> new PessoaNotFoundException("Pessoa " + id + " não encontrada!"));
 	}
+
+	public void deleteById(Long id) throws PessoaNotFoundException {
+		findById(id);
+		pessoaRepository.deleteById(id);
+	}
 	
 }
